@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', 'DestinationController@home')->name('home');
 Route::get('/detail/{destination}', 'DestinationController@detail')->name('detail');
+
+Route::get('/destination/search','DestinationController@search');
+Route::get('/destination/cari','DestinationController@cari');
 
 Route::get('/login', 'UserController@login')->name('login');
 Route::post('/postlogin', 'UserController@postlogin')->name('postlogin');

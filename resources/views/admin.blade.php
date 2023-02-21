@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link rel="shortcut icon" href="{{ asset('img/favicon.jpg') }}">
 
     <title>Welcome Admin</title>
 </head>
@@ -22,7 +22,11 @@
         @endif
     </div>
     <div class="container mt-5">
-        <a href="{{ route('add') }}" id="" class="btn btn-primary">+Add Destination</a>
+        <form class="d-flex" action="/destination/cari" method="GET">
+            <a href="{{ route('add') }}" id="" class="btn btn-primary">+Add Destination</a>
+            <input class="ms-auto rounded me-2" name="cari" value="{{ old('cari') }}" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light me-2" type="submit">Search</button>
+        </form>
         <table class="table table-light mt-2">
             <thead>
                 <tr>
@@ -52,6 +56,10 @@
                     @endforeach
         </table>
     </div>
-
+    <script>
+        setTimeout(() => {
+            document.querySelector('.alert').remove()
+        }, 2000);
+    </script>
 </body>
 </html>

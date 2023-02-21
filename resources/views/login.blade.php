@@ -61,6 +61,11 @@
             </div>
         </div>
     </div>
+    <script>
+        setTimeout(() => {
+            document.querySelector('.alert').remove()
+        }, 3000);
+    </script>
 
     <!-- Scripts -->
     <script src="https://pion.smkn2smi.sch.id/vendor/jquery/jquery.min.js"></script>
